@@ -1,0 +1,9 @@
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#fff;color:#0d1f1f;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
+.sticky-cta{display:none!important;}
+@media(max-width:768px){
+  .sticky-cta{display:flex!important;}
+  .mobile-menu-btn{display:flex!important;}
+  nav ul{display:none!important;}
+}

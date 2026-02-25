@@ -1,0 +1,21 @@
+export default function Contact() {
+  return (
+    <section id="contact" style={{padding:"120px 60px",background:"#0d1f1f",textAlign:"center",position:"relative",overflow:"hidden"}}>
+      <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:"600px",height:"600px",background:"radial-gradient(circle,rgba(14,158,142,0.15) 0%,transparent 70%)",pointerEvents:"none"}}></div>
+      <span style={{display:"block",fontSize:"10px",letterSpacing:"4px",textTransform:"uppercase",color:"#12b8a5",marginBottom:"20px",position:"relative"}}>Get Started</span>
+      <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(60px,9vw,120px)",lineHeight:0.9,color:"#fff",marginBottom:"16px",position:"relative"}}>
+        READY TO <em style={{fontFamily:"'Instrument Serif',serif",fontStyle:"italic",color:"#0e9e8e"}}>Actually</em><br/>GROW?
+      </h2>
+      <p style={{fontSize:"16px",color:"rgba(255,255,255,0.5)",maxWidth:"440px",margin:"0 auto 12px",lineHeight:1.7,position:"relative"}}>No sales pitch. No agency jargon. A straight conversation about your restaurant, your numbers, and whether we can help.</p>
+      <a href="mailto:hello@revenuekitchen.co.uk" style={{display:"block",color:"#0e9e8e",fontSize:"15px",letterSpacing:"1px",textDecoration:"none",marginBottom:"8px",position:"relative"}}>hello@revenuekitchen.co.uk</a>
+      <p style={{fontSize:"13px",color:"rgba(255,255,255,0.3)",marginBottom:"40px",position:"relative"}}>Pick a time below. 30 minutes. No pitch — just a straight conversation.</p>
+      <div style={{maxWidth:"760px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
+        <div style={{padding:"60px 40px",textAlign:"center"}}>
+          <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"28px",color:"#0d1f1f",letterSpacing:"2px",marginBottom:"12px"}}>BOOK YOUR CALL</div>
+          <p style={{fontSize:"14px",color:"#5a7070",marginBottom:"24px"}}>Once you&apos;ve set up your Calendly account, replace this with your embed code.</p>
+          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#0e9e8e",color:"#fff",padding:"14px 32px",fontSize:"12px",letterSpacing:"2px",textTransform:"uppercase",textDecoration:"none"}}>Create Calendly Account →</a>
+        </div>
+      </div>
+    </section>
+  );
+}
