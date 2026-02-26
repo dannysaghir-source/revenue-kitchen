@@ -1,6 +1,6 @@
 export default function CaseStudies() {
   return (
-    <section id="cases" style={{padding:"100px 60px",background:"#f8f8f8"}}>
+    <section id="cases" className="rk-section" style={{padding:"100px 60px",background:"#f8f8f8"}}>
       <div style={{display:"flex",justifyContent:"space-between",alignItems:"flex-end",marginBottom:"56px",gap:"32px",flexWrap:"wrap"}}>
         <div>
           <span style={{display:"block",fontSize:"10px",letterSpacing:"4px",textTransform:"uppercase",color:"#0e9e8e",marginBottom:"20px"}}>Proof</span>
@@ -8,7 +8,7 @@ export default function CaseStudies() {
         </div>
         <p style={{fontSize:"14px",color:"#5a7070",lineHeight:1.8,maxWidth:"300px"}}>One case study. Real numbers. No fluff.</p>
       </div>
-      <div style={{background:"#fff",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",padding:"72px 64px",alignItems:"center",borderRadius:"16px"}}>
+      <div className="rk-case-card" style={{background:"#fff",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"64px",padding:"72px 64px",alignItems:"center",borderRadius:"16px"}}>
         <div>
           <span style={{display:"block",fontSize:"10px",letterSpacing:"3px",textTransform:"uppercase",color:"#0e9e8e",marginBottom:"18px"}}>OGS Smash Burgers — Banbury, UK</span>
           <h3 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"38px",marginBottom:"16px",lineHeight:1.1}}>From Local Takeaway to Regional Brand</h3>

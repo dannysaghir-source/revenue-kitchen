@@ -2,8 +2,18 @@
 html{scroll-behavior:smooth;}
 body{background:#fff;color:#0d1f1f;font-family:'DM Sans',sans-serif;font-weight:300;overflow-x:hidden;}
 .sticky-cta{display:none!important;}
+
 @media(max-width:768px){
   .sticky-cta{display:flex!important;}
-  .mobile-menu-btn{display:flex!important;}
-  nav ul{display:none!important;}
-}
+    nav{padding-left:20px!important;padding-right:20px!important;}
+      .rk-nav-links{display:none!important;}
+        .mobile-menu-btn{display:flex!important;}
+          .rk-section{padding-left:20px!important;padding-right:20px!important;}
+            .rk-grid-3{grid-template-columns:1fr!important;}
+              .rk-grid-2{grid-template-columns:1fr!important;}
+                .rk-about{grid-template-columns:1fr!important;gap:40px!important;}
+                  .rk-case-card{grid-template-columns:1fr!important;padding:40px 24px!important;gap:40px!important;}
+                    .rk-not-for{grid-template-columns:1fr!important;gap:24px!important;}
+                      .rk-hero-stats{gap:28px!important;}
+                        .rk-footer{flex-direction:column!important;align-items:flex-start!important;padding:28px 20px!important;}
+                        }

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" style={{padding:"100px 60px",background:"#f0f9f8",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"center"}}>
+    <section id="about" className="rk-section rk-about" style={{padding:"100px 60px",background:"#f0f9f8",display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"center"}}>
       <div style={{position:"relative"}}>
         <Image src="/rk-photo.jpg" alt="Danny Saghir" width={500} height={667} style={{width:"100%",height:"auto",objectFit:"cover",objectPosition:"center top",display:"block",borderRadius:"16px"}} />
         <div style={{position:"absolute",bottom:"-20px",right:"-20px",background:"#0e9e8e",color:"#fff",padding:"20px 28px",fontFamily:"'Bebas Neue',sans-serif",fontSize:"13px",letterSpacing:"2px",lineHeight:1.5}}>£1M+ REVENUE<br/>NO 3RD PARTY APPS<br/>10 YRS MARKETING</div>

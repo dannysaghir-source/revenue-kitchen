@@ -12,7 +12,7 @@ export default function Nav() {
         <a href="#" style={{display:"flex",alignItems:"center"}}>
           <Image src="/rk-logo.jpg" alt="Revenue Kitchen" width={120} height={60} style={{height:"60px",width:"auto",objectFit:"contain"}} />
         </a>
-        <ul style={{display:"flex",gap:"36px",listStyle:"none",alignItems:"center"}}>
+        <ul className="rk-nav-links" style={{display:"flex",gap:"36px",listStyle:"none",alignItems:"center"}}>
           {[["#about","About"],["#services","Services"],["#cases","Results"]].map(([id,label])=>(
             <li key={id}><button onClick={()=>scroll(id)} style={{background:"none",border:"none",color:"#5a7070",fontSize:"11px",letterSpacing:"2px",textTransform:"uppercase",cursor:"pointer"}}>
               {label}

@@ -13,7 +13,7 @@ const faqs = [
 export default function FAQ() {
   const [open, setOpen] = useState<number|null>(null);
   return (
-    <section id="faq" style={{padding:"100px 60px",background:"#fff"}}>
+    <section id="faq" className="rk-section" style={{padding:"100px 60px",background:"#fff"}}>
       <span style={{display:"block",fontSize:"10px",letterSpacing:"4px",textTransform:"uppercase",color:"#0e9e8e",marginBottom:"20px"}}>FAQ</span>
       <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(44px,6vw,84px)",lineHeight:0.95,marginBottom:"48px",color:"#0a0a0a"}}>QUESTIONS <em style={{fontFamily:"'Instrument Serif',serif",fontStyle:"italic",color:"#0e9e8e"}}>Answered.</em></h2>
       <div style={{maxWidth:"760px"}}>
@@ -21,7 +21,7 @@ export default function FAQ() {
           <div key={i} style={{borderTop:"1px solid #e0eaea",borderBottom:i===faqs.length-1?"1px solid #e0eaea":"none"}}>
             <button onClick={()=>setOpen(open===i?null:i)} style={{width:"100%",textAlign:"left",background:"none",border:"none",padding:"24px 0",cursor:"pointer",display:"flex",justifyContent:"space-between",alignItems:"center",fontFamily:"'DM Sans',sans-serif",fontSize:"16px",fontWeight:400,color:"#0d1f1f"}}>
               {f.q}
-              <span style={{fontSize:"22px",color:"#0e9e8e",transform:open===i?"rotate(45deg)":"rotate(0deg)",transition:"transform 0.3s",flexShrink:0}}>+</span>
+              <span style={{fontSize:"22px",color:"#0e9e8e",transform:open===i?"rotate(45deg)":"rotate(0deg)",transition:"transform 0.3s",flexShrink:0,marginLeft:"16px"}}>+</span>
             </button>
             {open===i&&<div style={{paddingBottom:"24px",fontSize:"14px",color:"#5a7070",lineHeight:1.8}}>{f.a}</div>}
           </div>
