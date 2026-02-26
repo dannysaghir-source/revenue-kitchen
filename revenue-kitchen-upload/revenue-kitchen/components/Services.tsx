@@ -1,29 +1,21 @@
-"use client";
-
-export default function Hero() {
-  const smoothScroll = (id: string) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
+export default function Services() {
+  const services = [
+    {num:"01",title:"FIX REVENUE LEAKS",desc:"Delivery app commissions, poor pricing strategy, menu items that cost more than they make — we find where your money is walking out the door and plug it.",payoff:"You stop bleeding before you start scaling."},
+    {num:"02",title:"OPTIMISE MARGINS",desc:"We audit your full operation — menu mix, supplier costs, order channels — and build a strategy that puts more profit on every single transaction.",payoff:"Same revenue. More money in your pocket."},
+    {num:"03",title:"SCALE WITH ADS",desc:"Once your margins are healthy, we pour fuel on the fire. Meta ads built for restaurant conversion — more customers, more orders, more revenue.",payoff:"Growth that doesn't eat your profit."},
+  ];
   return (
-    <section id="hero" className="rk-section" style={{display:"flex",flexDirection:"column",padding:"20px 60px 80px",marginTop:"88px",position:"relative",overflow:"hidden",background:"linear-gradient(135deg,#0d1f1f 0%,#0e3030 60%,rgba(14,158,142,0.15) 100%)"}}>
-      <div aria-hidden style={{position:"absolute",top:"50%",right:"-40px",transform:"translateY(-50%)",fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(180px,22vw,320px)",color:"rgba(14,158,142,0.05)",lineHeight:1,pointerEvents:"none",userSelect:"none"}}>£££</div>
-      <h1 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(56px,10vw,148px)",lineHeight:0.9,maxWidth:"900px",margin:"0 0 32px 0",color:"#fff"}}>
-        YOUR RESTAURANT<br/>DESERVES TO <em style={{fontFamily:"'Instrument Serif',serif",fontStyle:"italic",color:"#0e9e8e"}}>Print</em><br/>MONEY.
-      </h1>
-      <p style={{fontSize:"17px",color:"rgba(255,255,255,0.6)",maxWidth:"520px",lineHeight:1.75,marginBottom:"16px"}}>
-        Just Eat and Uber Eats eating your margins? Stuck working <em style={{color:"rgba(255,255,255,0.8)"}}>in</em> your restaurant instead of <em style={{color:"rgba(255,255,255,0.8)"}}>on</em> it? I&apos;ve solved both. My restaurant does <strong style={{color:"#fff",fontWeight:400}}>£1M+ a year, with no 3rd party apps, and I don&apos;t work the floor.</strong> Now I help other operators do the same.
-      </p>
-      <p style={{fontSize:"13px",color:"rgba(255,255,255,0.35)",letterSpacing:"1px",marginBottom:"32px"}}>30 minutes. I&apos;ll audit your restaurant&apos;s revenue leaks for free.</p>
-      <div style={{display:"flex",alignItems:"center",gap:"16px",flexWrap:"wrap",marginBottom:"64px"}}>
-        <button onClick={()=>smoothScroll("#contact")} style={{background:"#0e9e8e",color:"#fff",padding:"16px 40px",fontSize:"12px",letterSpacing:"2px",textTransform:"uppercase",border:"none",cursor:"pointer"}}>Book a Strategy Call</button>
-        <button onClick={()=>smoothScroll("#cases")} style={{color:"rgba(255,255,255,0.7)",fontSize:"12px",letterSpacing:"1.5px",textTransform:"uppercase",background:"none",border:"none",cursor:"pointer"}}>See the results →</button>
-      </div>
-      <div className="rk-hero-stats" style={{display:"flex",gap:"48px",flexWrap:"wrap",paddingTop:"36px",borderTop:"1px solid rgba(255,255,255,0.12)"}}>
-        {[{num:"10+",label:"Years in Marketing"},{num:"£1M+",label:"Revenue, No Delivery Apps"},{num:"£462K",label:"Personal Capital Deployed"}].map(s=>(
-          <div key={s.label}>
-            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"48px",color:"#fff",lineHeight:1}}>{s.num}</div>
-            <div style={{fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",color:"rgba(255,255,255,0.45)",marginTop:"6px"}}>{s.label}</div>
+    <section id="services" className="rk-section" style={{padding:"100px 60px",background:"#fff"}}>
+      <span style={{display:"block",fontSize:"10px",letterSpacing:"4px",textTransform:"uppercase",color:"#0e9e8e",marginBottom:"20px"}}>What We Do</span>
+      <h2 style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"clamp(44px,6vw,84px)",lineHeight:0.95,marginBottom:"20px",color:"#0a0a0a"}}>I HAVE THE <em style={{fontFamily:"'Instrument Serif',serif",fontStyle:"italic",color:"#0e9e8e"}}>Secret</em><br/>SAUCE.</h2>
+      <p style={{fontSize:"15px",color:"#5a7070",lineHeight:1.8,maxWidth:"520px",marginBottom:"64px"}}>Most agencies guess. I know. I run the restaurant. Every service is built around one thing — more revenue in your till.</p>
+      <div className="rk-grid-3" style={{display:"grid",gridTemplateColumns:"repeat(3,1fr)",gap:"24px"}}>
+        {services.map(s=>(
+          <div key={s.num} style={{background:"#1c1c1e",border:"1px solid #2a2a2a",padding:"44px 36px",borderRadius:"16px"}}>
+            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"64px",color:"rgba(14,158,142,0.25)",lineHeight:1,marginBottom:"20px"}}>{s.num}</div>
+            <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"22px",letterSpacing:"1px",marginBottom:"14px",color:"#fff"}}>{s.title}</div>
+            <div style={{fontSize:"14px",color:"rgba(255,255,255,0.5)",lineHeight:1.7}}>{s.desc}</div>
+            <span style={{fontSize:"13px",color:"#0e9e8e",fontStyle:"italic",marginTop:"16px",display:"block"}}>{s.payoff}</span>
           </div>
         ))}
       </div>
