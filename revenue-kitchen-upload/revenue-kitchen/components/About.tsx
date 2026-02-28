@@ -20,7 +20,7 @@ export default function About() {
           You&apos;ve watched other restaurants half as good as yours get ten times the attention. That&apos;s not luck. That&apos;s marketing.
         </p>
         <div style={{fontSize:"15px",color:"#5a7070",lineHeight:1.85,marginBottom:"36px"}}>
-          <p>My name is Danny Saghir. I run OGS — a smash burger and Nashville chicken restaurant doing £1M+ a year from a single Banbury location, no delivery apps, and I don&apos;t work the floor. I understand your P&amp;L because I live inside one. Everything I bring to your restaurant has been tested on my own money first.</p>
+          <p>My name is Danny Saghir. I run OGS — a smash burger and Nashville chicken restaurant doing £1M+ a year from a single Banbury location, no delivery apps, and I don&apos;t work the floor. I understand your P&amp;L because I live inside one. Everything I bring to your restaurant has been tested with my own money first.</p>
         </div>
         <ul style={{display:"flex",flexDirection:"column",gap:"14px",listStyle:"none",padding:0}}>
           {["£1M+ annual revenue from a single UK location — no 3rd party delivery apps","10 years in marketing","Franchise model currently in development","Building in public — real numbers, real lessons"].map(item=>(
