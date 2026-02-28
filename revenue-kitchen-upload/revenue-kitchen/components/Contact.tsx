@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export default function Contact() {
   return (
     <section id="contact" style={{padding:"120px 60px",background:"#0d1f1f",textAlign:"center",position:"relative",overflow:"hidden"}}>
@@ -10,11 +12,8 @@ export default function Contact() {
       <a href="mailto:hello@revenuekitchen.co.uk" style={{display:"block",color:"#0e9e8e",fontSize:"15px",letterSpacing:"1px",textDecoration:"none",marginBottom:"8px",position:"relative"}}>hello@revenuekitchen.co.uk</a>
       <p style={{fontSize:"13px",color:"rgba(255,255,255,0.3)",marginBottom:"40px",position:"relative"}}>Pick a time below. 30 minutes. No pitch — just a straight conversation.</p>
       <div style={{maxWidth:"760px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
-        <div style={{padding:"60px 40px",textAlign:"center"}}>
-          <div style={{fontFamily:"'Bebas Neue',sans-serif",fontSize:"28px",color:"#0d1f1f",letterSpacing:"2px",marginBottom:"12px"}}>BOOK YOUR CALL</div>
-          <p style={{fontSize:"14px",color:"#5a7070",marginBottom:"24px"}}>Once you&apos;ve set up your Calendly account, replace this with your embed code.</p>
-          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" style={{display:"inline-block",background:"#0e9e8e",color:"#fff",padding:"14px 32px",fontSize:"12px",letterSpacing:"2px",textTransform:"uppercase",textDecoration:"none"}}>Create Calendly Account →</a>
-        </div>
+        <div className="calendly-inline-widget" data-url="https://calendly.com/danyalsaghir/30min" style={{minWidth:"320px",height:"700px"}}></div>
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </div>
     </section>
   );
