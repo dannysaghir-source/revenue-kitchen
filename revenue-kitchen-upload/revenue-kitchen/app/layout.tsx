@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Revenue Kitchen — Restaurant Marketing Agency UK",
-  description: "Restaurant marketing agency run by a real operator. We help UK restaurants doing £250K+ grow revenue, fix margins and ditch delivery apps.",
+  description: "ROI-first restaurant marketing, run by a real operator. We help UK restaurants doing £250K+ grow revenue, fix margins and ditch delivery apps — everything tested on our own restaurant first.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
