@@ -16,8 +16,8 @@ export default function Contact() {
       };
     })(w, "https://app.cal.eu/embed/embed.js", "init");
     w.Cal("init", "30min", {origin:"https://app.cal.eu"});
-    w.Cal.ns["30min"]("inline", {elementOrSelector:"#my-cal-inline-30min", config:{layout:"month_view",useSlotsViewOnSmallScreen:"true",theme:"light"}, calLink:"revenuekitchen/30min"});
-    w.Cal.ns["30min"]("ui", {theme:"light", cssVarsPerTheme:{light:{"cal-brand":"#0e9e8e"}}, hideEventTypeDetails:false, layout:"month_view"});
+    w.Cal.ns["30min"]("inline", {elementOrSelector:"#my-cal-inline-30min", config:{layout:"month_view",useSlotsViewOnSmallScreen:"true",theme:"dark"}, calLink:"revenuekitchen/30min"});
+    w.Cal.ns["30min"]("ui", {theme:"dark", cssVarsPerTheme:{light:{"cal-brand":"#0e9e8e"}}, hideEventTypeDetails:false, layout:"month_view"});
   }, []);
   return (
     <section id="contact" style={{padding:"120px 60px",background:"#0d1f1f",textAlign:"center",position:"relative",overflow:"hidden"}}>
@@ -29,7 +29,7 @@ export default function Contact() {
       <p style={{fontSize:"16px",color:"rgba(255,255,255,0.5)",maxWidth:"440px",margin:"0 auto 12px",lineHeight:1.7,position:"relative"}}>No sales pitch. No agency jargon. A straight conversation about your restaurant, your numbers, and whether we can help.</p>
       <a href="mailto:hello@revenuekitchen.co.uk" style={{display:"block",color:"#0e9e8e",fontSize:"15px",letterSpacing:"1px",textDecoration:"none",marginBottom:"8px",position:"relative"}}>hello@revenuekitchen.co.uk</a>
       <p style={{fontSize:"13px",color:"rgba(255,255,255,0.3)",marginBottom:"40px",position:"relative"}}>Pick a time below. 30 minutes. No pitch — just a straight conversation.</p>
-      <div style={{maxWidth:"900px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
+      <div style={{maxWidth:"900px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",position:"relative"}}>
         <div style={{width:"100%",height:"500px",overflow:"auto"}} id="my-cal-inline-30min"></div>
       </div>
     </section>
