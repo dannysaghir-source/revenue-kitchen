@@ -11,7 +11,7 @@ export default function Contact() {
       <a href="mailto:hello@revenuekitchen.co.uk" style={{display:"block",color:"#0e9e8e",fontSize:"14px",letterSpacing:"1px",textDecoration:"none",marginBottom:"6px",position:"relative"}}>hello@revenuekitchen.co.uk</a>
       <p style={{fontSize:"12px",color:"rgba(255,255,255,0.3)",marginBottom:"32px",position:"relative"}}>Pick a time below. 30 minutes. No pitch — just a straight conversation.</p>
       <div style={{maxWidth:"480px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
-        <div className="calendly-inline-widget" data-url="https://calendly.com/danyalsaghir/30min?hide_event_type_details=1&hide_gdpr_banner=1" data-resize="true" style={{minWidth:"280px",height:"650px"}}></div>
+        <div className="calendly-inline-widget" data-url="https://calendly.com/danyalsaghir/30min?hide_event_type_details=1&hide_gdpr_banner=1" data-resize="true" style={{minWidth:"280px",height:"900px"}}></div>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </div>
     </section>
