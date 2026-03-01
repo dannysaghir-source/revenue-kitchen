@@ -11,8 +11,8 @@ export default function Contact() {
       <p style={{fontSize:"16px",color:"rgba(255,255,255,0.5)",maxWidth:"440px",margin:"0 auto 12px",lineHeight:1.7,position:"relative"}}>No sales pitch. No agency jargon. A straight conversation about your restaurant, your numbers, and whether we can help.</p>
       <a href="mailto:hello@revenuekitchen.co.uk" style={{display:"block",color:"#0e9e8e",fontSize:"15px",letterSpacing:"1px",textDecoration:"none",marginBottom:"8px",position:"relative"}}>hello@revenuekitchen.co.uk</a>
       <p style={{fontSize:"13px",color:"rgba(255,255,255,0.3)",marginBottom:"40px",position:"relative"}}>Pick a time below. 30 minutes. No pitch — just a straight conversation.</p>
-      <div style={{maxWidth:"760px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
-        <div className="calendly-inline-widget" data-url="https://calendly.com/danyalsaghir/30min" style={{minWidth:"320px",height:"520px"}}></div>
+      <div style={{maxWidth:"480px",margin:"0 auto",borderRadius:"12px",overflow:"hidden",background:"#fff",position:"relative"}}>
+        <div className="calendly-inline-widget" data-url="https://calendly.com/danyalsaghir/30min" style={{minWidth:"320px",height:"500px"}}></div>
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </div>
     </section>
