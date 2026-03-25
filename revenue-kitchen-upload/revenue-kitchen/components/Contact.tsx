@@ -52,7 +52,7 @@ export default function Contact() {
     (function (C: any, A: string, L: string) {
       let p = function (a: any, ar: any) { a.q.push(ar); };
       let d = C.document;
-      C[L] || (C[L] = { l: 1 * new Date(), q: [] });
+      C[L] || (C[L] = { l: Date.now(), q: [] });
       let s = d.createElement("script");
       s.async = 1;
       s.src = A;
