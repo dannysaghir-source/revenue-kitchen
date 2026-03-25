@@ -43,36 +43,46 @@ export default function Contact() {
   const [step, setStep] = useState(0);
   const [status, setStatus] = useState("form");
 
-  // Initialise Cal.com on mount — same pattern as original, wrapped in try/catch
   useEffect(() => {
-    try {
-      const w = window as any;
-      (function (C: any, A: string, L: string) {
-        let p = function (a: any, ar: any) { a.q.push(ar); };
-        let d = C.document;
-        C[L] || (C[L] = { q: [] });
-        let s = d.createElement("script");
-        s.async = 1;
-        s.src = A;
-        d.head.appendChild(s);
-        C[L] = function () { p(C[L], arguments); };
-        C[L].q = C[L].q || [];
-        C[L].loaded = 1;
-      })(w, "https://app.cal.eu/embed/embed.js", "Cal");
-      w.Cal("init", "30min", { origin: "https://app.cal.eu" });
-      w.Cal.ns["30min"]("inline", {
-        elementOrSelector: "#my-cal-inline-30min",
-        config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "dark" },
-        calLink: "revenuekitchen/30min",
-      });
-      w.Cal.ns["30min"]("ui", {
-        theme: "dark",
-        cssVarsPerTheme: { light: { "cal-brand": "#0e9e8e" } },
-        hideEventTypeDetails: false,
-        layout: "month_view",
-      });
-    } catch (_) {
-      // Cal.com loads asynchronously — init errors are non-fatal
+    const w = window as any;
+
+    // Set up Cal as a queuing function if not already loaded
+    if (!w.Cal) {
+      w.Cal = function () {
+        (w.Cal.q = w.Cal.q || []).push(arguments);
+      };
+      w.Cal.q = [];
+    }
+
+    // Set up the 30min namespace queue before the script loads
+    w.Cal.ns = w.Cal.ns || {};
+    if (!w.Cal.ns["30min"]) {
+      w.Cal.ns["30min"] = function () {
+        (w.Cal.ns["30min"].q = w.Cal.ns["30min"].q || []).push(arguments);
+      };
+      w.Cal.ns["30min"].q = [];
+    }
+
+    // Queue all setup calls — replayed when embed.js loads
+    w.Cal("init", "30min", { origin: "https://app.cal.eu" });
+    w.Cal.ns["30min"]("inline", {
+      elementOrSelector: "#my-cal-inline-30min",
+      config: { layout: "month_view", useSlotsViewOnSmallScreen: "true", theme: "dark" },
+      calLink: "revenuekitchen/30min",
+    });
+    w.Cal.ns["30min"]("ui", {
+      theme: "dark",
+      cssVarsPerTheme: { light: { "cal-brand": "#0e9e8e" } },
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
+
+    // Load the script — it will process the queued calls on load
+    if (!document.querySelector('script[src*="cal.eu/embed"]')) {
+      const s = document.createElement("script");
+      s.src = "https://app.cal.eu/embed/embed.js";
+      s.async = true;
+      document.head.appendChild(s);
     }
   }, []);
 
@@ -148,7 +158,7 @@ export default function Contact() {
   return (
     <section id="contact" style={base.section}>
 
-      {/* Disqualified state */}
+      {/* Disqualified */}
       {status === "disqualified" && (
         <div style={base.card}>
           <div style={{ fontSize: "40px", marginBottom: "20px", color: "#ff4444" }}>✕</div>
@@ -166,7 +176,7 @@ export default function Contact() {
         </div>
       )}
 
-      {/* Form state */}
+      {/* Form */}
       {status === "form" && (
         <>
           <h2 style={base.heading}>
@@ -216,7 +226,7 @@ export default function Contact() {
         </>
       )}
 
-      {/* Qualified — show heading above calendar */}
+      {/* Qualified heading */}
       {status === "contact" && (
         <>
           <h2 style={base.heading}>
@@ -226,7 +236,7 @@ export default function Contact() {
         </>
       )}
 
-      {/* Cal.com div — always in DOM so Cal can attach on mount, hidden until qualified */}
+      {/* Cal.com div — always in DOM so the queued inline call can attach on load */}
       <div
         id="my-cal-inline-30min"
         style={{
