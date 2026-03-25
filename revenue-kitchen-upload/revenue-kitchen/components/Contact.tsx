@@ -180,7 +180,7 @@ export default function Contact() {
       {status === "form" && (
         <>
           <h2 style={base.heading}>
-            READY TO <span style={{ color: "#0e9e8e" }}>ACTUALLY</span> GROW?
+            READY TO <span style={{ color: "#0e9e8e", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", textTransform: "none", fontSize: "1.15em" }}>Actually</span>GROW?
           </h2>
           <p style={base.sub}>Answer 5 quick questions to see if we&apos;re the right fit.</p>
           <div style={base.card}>
@@ -230,7 +230,7 @@ export default function Contact() {
       {status === "contact" && (
         <>
           <h2 style={base.heading}>
-            READY TO <span style={{ color: "#0e9e8e" }}>ACTUALLY</span> GROW?
+            READY TO <span style={{ color: "#0e9e8e", fontFamily: "'Instrument Serif', serif", fontStyle: "italic", textTransform: "none", fontSize: "1.15em" }}>Actually</span> GROW?
           </h2>
           <p style={base.sub}>You&apos;re a good fit. Book your free 30-minute call below.</p>
         </>
