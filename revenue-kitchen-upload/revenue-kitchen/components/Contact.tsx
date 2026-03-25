@@ -113,7 +113,7 @@ export default function Contact() {
     },
     heading: {
       fontSize: "clamp(28px, 5vw, 56px)",
-      fontWeight: 900,
+      fontWeight: 900, fontFamily: "'Bebas Neue', sans-serif",
       color: "#ffffff",
       marginBottom: "16px",
       textTransform: "uppercase" as const,
