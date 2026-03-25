@@ -5,8 +5,8 @@ const STEPS = [
   {
     id: "business_type",
     question: "What type of business do you run?",
-    options: ["Restaurant / Café", "Takeaway / Fast Food", "Bar / Pub", "Other"],
-    disqualify: ["Other"],
+    options: ["Restaurant", "Takeaway / Fast Food", "Café", "Ghost Kitchen / Dark Kitchen"],
+    disqualify: [],
   },
   {
     id: "decision_maker",
@@ -17,8 +17,8 @@ const STEPS = [
   {
     id: "revenue",
     question: "What is your monthly revenue (approximate)?",
-    options: ["Under £5,000", "£5,000 – £20,000", "£20,000 – £50,000", "£50,000+"],
-    disqualify: ["Under £5,000", "£5,000 – £20,000"],
+    options: ["Under £9k a month", "£10k – £19k a month", "£20k – £49k a month", "£50k+ a month"],
+    disqualify: ["Under £9k a month", "£10k – £19k a month"],
   },
   {
     id: "locations",
@@ -45,7 +45,6 @@ export default function Contact() {
 
   useEffect(() => {
     const w = window as any;
-
     // Set up Cal as a queuing function if not already loaded
     if (!w.Cal) {
       w.Cal = function () {
@@ -53,7 +52,6 @@ export default function Contact() {
       };
       w.Cal.q = [];
     }
-
     // Set up the 30min namespace queue before the script loads
     w.Cal.ns = w.Cal.ns || {};
     if (!w.Cal.ns["30min"]) {
@@ -62,7 +60,6 @@ export default function Contact() {
       };
       w.Cal.ns["30min"].q = [];
     }
-
     // Queue all setup calls — replayed when embed.js loads
     w.Cal("init", "30min", { origin: "https://app.cal.eu" });
     w.Cal.ns["30min"]("inline", {
@@ -76,7 +73,6 @@ export default function Contact() {
       hideEventTypeDetails: false,
       layout: "month_view",
     });
-
     // Load the script — it will process the queued calls on load
     if (!document.querySelector('script[src*="cal.eu/embed"]')) {
       const s = document.createElement("script");
@@ -101,63 +97,16 @@ export default function Contact() {
   };
 
   const base = {
-    section: {
-      background: "#0d1f1f",
-      padding: "80px 20px",
-      textAlign: "center" as const,
-      minHeight: "600px",
-      display: "flex",
-      flexDirection: "column" as const,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    heading: {
-      fontSize: "clamp(28px, 5vw, 56px)",
-      fontWeight: 900, fontFamily: "'Bebas Neue', sans-serif",
-      color: "#ffffff",
-      marginBottom: "16px",
-      textTransform: "uppercase" as const,
-      letterSpacing: "1px",
-    },
-    sub: {
-      color: "#0e9e8e",
-      fontSize: "clamp(14px, 2vw, 18px)",
-      marginBottom: "48px",
-      maxWidth: "560px",
-    },
-    card: {
-      background: "#0a1a1a",
-      border: "1px solid #1a3333",
-      borderRadius: "4px",
-      padding: "40px 32px",
-      maxWidth: "600px",
-      width: "100%",
-    },
-    question: {
-      color: "#ffffff",
-      fontSize: "clamp(16px, 3vw, 22px)",
-      fontWeight: 700,
-      marginBottom: "32px",
-      lineHeight: 1.4,
-    },
-    btn: {
-      display: "block",
-      width: "100%",
-      padding: "16px 20px",
-      marginBottom: "12px",
-      background: "transparent",
-      border: "1px solid #1a3333",
-      borderRadius: "2px",
-      color: "#cccccc",
-      fontSize: "16px",
-      textAlign: "left" as const,
-      cursor: "pointer",
-    },
+    section: { background: "#0d1f1f", padding: "80px 20px", textAlign: "center" as const, minHeight: "600px", display: "flex", flexDirection: "column" as const, alignItems: "center", justifyContent: "center" },
+    heading: { fontSize: "clamp(28px, 5vw, 56px)", fontWeight: 900, fontFamily: "'Bebas Neue', sans-serif", color: "#ffffff", marginBottom: "16px", textTransform: "uppercase" as const, letterSpacing: "1px" },
+    sub: { color: "#0e9e8e", fontSize: "clamp(14px, 2vw, 18px)", marginBottom: "48px", maxWidth: "560px" },
+    card: { background: "#0a1a1a", border: "1px solid #1a3333", borderRadius: "4px", padding: "40px 32px", maxWidth: "600px", width: "100%" },
+    question: { color: "#ffffff", fontSize: "clamp(16px, 3vw, 22px)", fontWeight: 700, marginBottom: "32px", lineHeight: 1.4 },
+    btn: { display: "block", width: "100%", padding: "16px 20px", marginBottom: "12px", background: "transparent", border: "1px solid #1a3333", borderRadius: "2px", color: "#cccccc", fontSize: "16px", textAlign: "left" as const, cursor: "pointer" },
   };
 
   return (
     <section id="contact" style={base.section}>
-
       {/* Disqualified */}
       {status === "disqualified" && (
         <div style={base.card}>
@@ -166,16 +115,13 @@ export default function Contact() {
             We don&apos;t think we&apos;re the right fit — yet.
           </h2>
           <p style={{ color: "#888888", fontSize: "16px", lineHeight: 1.7 }}>
-            Revenue Kitchen works best with established restaurant and takeaway
-            businesses turning over £20k+ a month. If that changes, we&apos;d
-            love to hear from you.
+            Revenue Kitchen works best with established restaurant and takeaway businesses turning over £20k+ a month. If that changes, we&apos;d love to hear from you.
           </p>
           <p style={{ color: "#0e9e8e", marginTop: "24px", fontSize: "15px" }}>
             danyalsaghir@outlook.com
           </p>
         </div>
       )}
-
       {/* Form */}
       {status === "form" && (
         <>
@@ -186,34 +132,14 @@ export default function Contact() {
           <div style={base.card}>
             <div style={{ display: "flex", gap: "6px", marginBottom: "28px", justifyContent: "center" }}>
               {STEPS.map((_, i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: "8px",
-                    height: "8px",
-                    borderRadius: "50%",
-                    background: i <= step ? "#0e9e8e" : "#1a3333",
-                  }}
-                />
+                <div key={i} style={{ width: "8px", height: "8px", borderRadius: "50%", background: i <= step ? "#0e9e8e" : "#1a3333" }} />
               ))}
             </div>
             <p style={base.question}>{currentStep.question}</p>
             {currentStep.options.map((option) => (
-              <button
-                key={option}
-                style={base.btn}
-                onMouseEnter={(e) => {
-                  const t = e.currentTarget;
-                  t.style.borderColor = "#0e9e8e";
-                  t.style.color = "#ffffff";
-                  t.style.background = "rgba(14,158,142,0.08)";
-                }}
-                onMouseLeave={(e) => {
-                  const t = e.currentTarget;
-                  t.style.borderColor = "#1a3333";
-                  t.style.color = "#cccccc";
-                  t.style.background = "transparent";
-                }}
+              <button key={option} style={base.btn}
+                onMouseEnter={(e) => { const t = e.currentTarget; t.style.borderColor = "#0e9e8e"; t.style.color = "#ffffff"; t.style.background = "rgba(14,158,142,0.08)"; }}
+                onMouseLeave={(e) => { const t = e.currentTarget; t.style.borderColor = "#1a3333"; t.style.color = "#cccccc"; t.style.background = "transparent"; }}
                 onClick={() => handleOption(option)}
               >
                 {option}
@@ -225,7 +151,6 @@ export default function Contact() {
           </div>
         </>
       )}
-
       {/* Qualified heading */}
       {status === "contact" && (
         <>
@@ -235,18 +160,8 @@ export default function Contact() {
           <p style={base.sub}>You&apos;re a good fit. Book your free 30-minute call below.</p>
         </>
       )}
-
       {/* Cal.com div — always in DOM so the queued inline call can attach on load */}
-      <div
-        id="my-cal-inline-30min"
-        style={{
-          display: status === "contact" ? "block" : "none",
-          width: "100%",
-          maxWidth: "900px",
-          minHeight: "600px",
-          overflow: "scroll",
-        }}
-      />
+      <div id="my-cal-inline-30min" style={{ display: status === "contact" ? "block" : "none", width: "100%", maxWidth: "900px", minHeight: "600px", overflow: "scroll" }} />
     </section>
   );
 }
